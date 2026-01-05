@@ -1,4 +1,4 @@
-# Geospatial ETL ?
+# Geospatial ETL
 
 ## Provisioning Raw Storage & Validating Ingested Data (Azure + Terraform)
 
