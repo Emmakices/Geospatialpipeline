@@ -2,7 +2,7 @@
 
 ## Provisioning Raw Storage & Validating Ingested Data (Azure + Terraform)
 
-## 1. Purpose of This Phase (What We?re Solving)
+## 1. Purpose of This Phase
 
 The goal of this phase was to build a reliable and auditable raw data ingestion layer for geospatial data (OpenStreetMap .pbf files).
 
@@ -16,7 +16,7 @@ In real-world data engineering:
 
 This phase sets up that foundation.
 
-## 2. Infrastructure as Code: Why Terraform?
+## 2. Infrastructure as Code
 
 We used Terraform to provision Azure resources because:
 
@@ -123,9 +123,7 @@ We solved this properly by:
 - Scoped directly to the storage account
 - Using Azure AD authentication, not storage keys
 
-This is a best practice and something interviewers love to hear.
-
-## 7. Data Validation: Why We Don?t Trust Files Blindly
+## 7. Data Validation
 
 Even if data comes from a trusted source, validation is mandatory.
 
@@ -156,7 +154,7 @@ Why this matters:
 - Prevents duplicate processing
 - Enables idempotent pipelines
 
-### 7.3 Metadata Attachment (Critical Design Choice)
+### 7.3 Metadata Attachment
 
 Instead of storing validation info elsewhere, we attached it directly to the blob as metadata:
 
@@ -172,7 +170,7 @@ This means:
 
 This is a very strong design decision
 
-## Step-by-step Implementation (with real commands)
+## Step-by-step Implementation
 
 ### 1) Confirm Terraform + Azure CLI
 ```powershell
