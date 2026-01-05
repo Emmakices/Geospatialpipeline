@@ -1,4 +1,4 @@
-# Geospatial ETL ? Phase 1 Documentation
+# Geospatial ETL ?
 
 ## Provisioning Raw Storage & Validating Ingested Data (Azure + Terraform)
 
