@@ -29,3 +29,20 @@ variable "tags" {
     env     = "dev"
   }
 }
+
+variable "acr_name" {
+  description = "Azure Container Registry name (must be globally unique, 5-50 alphanumeric only)"
+  type        = string
+}
+
+variable "env" {
+  description = "Environment tag (dev/stage/prod)"
+  type        = string
+  default     = "dev"
+}
+
+variable "project" {
+  description = "Project tag"
+  type        = string
+  default     = "geospatial-pipeline"
+}

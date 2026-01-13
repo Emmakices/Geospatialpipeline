@@ -14,6 +14,13 @@ provider "azurerm" {
   subscription_id = "a5799817-49f0-4302-b5b4-f0c14252f0a2"
 }
 
+locals {
+  tags = {
+    env     = var.env
+    project = var.project
+  }
+}
+
 resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
@@ -45,3 +52,13 @@ resource "azurerm_storage_container" "raw" {
   container_access_type = "private"
 }
 
+resource "azurerm_container_registry" "acr" {
+  name                = var.acr_name
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+
+  sku           = "Basic"
+  admin_enabled = false
+
+  tags = local.tags
+}

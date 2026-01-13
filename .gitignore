@@ -3,3 +3,16 @@
 *.tfstate.*
 crash.log
 .env
+# Python
+__pycache__/
+*.pyc
+
+# Spark / Databricks
+.metastore_db/
+derby.log
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
